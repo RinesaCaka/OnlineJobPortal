@@ -13,17 +13,17 @@
 <body>
     <navbar>
         <div class="cus-navbar-logo">
-            <a href="/"><img src="~/Content/Static/claysys-logo.png"></a>
+            <a href="/"><img src="~/Content/Static/logo1.png" ></a>
         </div>
         <div class="cus-navbar">
 
             <a href="@Url.Action("Jobs","Home")">Jobs</a>
+       
             <a href="@Url.Action("Login","Home")" class="btn-login">Login</a>
 
             <a href="@Url.Action("JobSeekerRegister", "Home")" class="btn-register">Register</a>
-            <div class="cus-dropdown "><p href="#" style="margin-top:30px">|</p></div>
-            <a href="@Url.Action("About","Home")">About us</a>
-            <a href="@Url.Action("ContactUs","Home")">Contact us</a>
+
+
         </div>
 
     </navbar>
@@ -61,7 +61,7 @@
     <footer class="row row-cols-5 py-5 my-5 border-top">
         <div class="col">
             <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><img src="~/Content/Static/claysys-logo.png"></svg>
+                <svg class="bi me-2" width="200px"><img src="~/Content/Static/logo1.png" width="200px"></svg>
 
             </a>
         </div>
@@ -86,7 +86,7 @@
         </div>
     </footer>
     <div class="copy-right" align="center">
-        &copy; @DateTime.Now.Year Claysys technologies
+        &copy; @DateTime.Now.Year Jobs technologies
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

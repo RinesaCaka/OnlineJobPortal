@@ -1,0 +1,168 @@
+-----------Exception Details on  1/23/2024 8:03:54 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/23/2024 8:03:54 PM
+
+Error Line No : ine 375
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Chats'.
+
+ Error Page Url: https://localhost:44331/Employer/ChatList
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/23/2024 8:03:58 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/23/2024 8:03:58 PM
+
+Error Line No : ine 375
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Chats'.
+
+ Error Page Url: https://localhost:44331/Employer/ChatList
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/23/2024 8:04:03 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/23/2024 8:04:03 PM
+
+Error Line No : ine 375
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Chats'.
+
+ Error Page Url: https://localhost:44331/Employer/ChatList
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/23/2024 8:24:18 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/23/2024 8:24:18 PM
+
+Error Line No : ine 375
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Chats'.
+
+ Error Page Url: https://localhost:44331/Employer/ChatList
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/23/2024 8:41:52 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/23/2024 8:41:52 PM
+
+Error Line No : ine 375
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Chats'.
+
+ Error Page Url: https://localhost:44331/Employer/ChatList
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/23/2024 9:02:08 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/23/2024 9:02:08 PM
+
+Error Line No : ine 375
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Chats'.
+
+ Error Page Url: https://localhost:44331/Employer/ChatList
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/23/2024 9:02:10 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/23/2024 9:02:10 PM
+
+Error Line No : ine 375
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Chats'.
+
+ Error Page Url: https://localhost:44331/Employer/ChatList
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

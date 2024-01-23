@@ -28,7 +28,7 @@ navbar {
     position:static;
     justify-content: space-between;
     background-color: #fff;
-    padding: 0px 50px 0px 50px;
+    padding: 0px 50px;
     color: dimgray;
     height: 100px;
     box-shadow:0px 0px 5px #808080;
@@ -40,9 +40,13 @@ navbar {
 }
 .cus-navbar-logo{
     margin-top:20px;
+     padding-bottom:50rem;
 }
 .cus-navbar-logo img {
-    height: 60%;
+    height:90px;
+    width:150px;
+    padding-bottom:1rem;
+   
 }
 .cus-navbar a {
     float: left;
@@ -52,6 +56,7 @@ navbar {
     text-align: center;
     padding: 30px 20px;
     text-decoration: none;
+    padding-bottom:20px;
     
 }
 .cus-dropdown {
@@ -112,10 +117,10 @@ navbar {
     display: block;
 }
 .btn-login {
-    color: #ef476f !important;
+    color: #4682B4!important;
 }
 .btn-register {
-color: #2aa5a1!important;
+    color: #2F4F4F!important;
 }
 footer{
     width:100%;
@@ -139,6 +144,7 @@ footer{
 
 .d-search {
     width: 400px;
+    padding-left:40px;
 }
 .d-search input[type=text]{
     width:100%;
@@ -151,9 +157,9 @@ footer{
 .btn-search {
     height: 40px;
     border-radius: 20px;
-    background-color: #ef476f;
-    color:white;
-    border:none;
+    background-color: #4682B4;
+    color: white;
+    border: none;
 }
 .event-swiper {
     position: relative;
@@ -163,8 +169,9 @@ footer{
     left: 0;
     top: 0;
     height: 300px;
+    width:110%;
     z-index: -1;
-    margin-left:-200px;
+    
 }
 
 .error-msg {
@@ -367,7 +374,7 @@ footer{
     }
 .cus-box-reg {
     position: relative;
-    background-image: linear-gradient(to right, #f3a0d9 0%, #83f5e5 51%, #8cded3 100%);
+    background-image: linear-gradient(to right, #0d7df0 0%, rgb(133 207 197)51%, #8cded3 100%);
     height: fit-content;
     width: 100%;
     border-radius: 10px;
@@ -471,10 +478,17 @@ footer{
 }
 .bg-cus {
     border-radius: 20px;
-    background-color: #f6fbff
+    background-color: white;
 }
+    .bg-cus h4 {
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Times New Roman';
+        color: #4682B4;
+    }
+
 .post-vac {
-    margin-top: 30%;
+    margin-top:30%;
     width: -webkit-fill-available;
 }
 .message-body {
