@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -126,44 +129,23 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
-    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
-    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
-    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
-    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
-    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\EmployerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\JobSeekerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmployerModel.cs" />
+    <Compile Include="Models\JobSeekerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AdminRepository.cs" />
+    <Compile Include="Repository\EmployerRepository.cs" />
+    <Compile Include="Repository\ExceptionLogging.cs" />
+    <Compile Include="Repository\JobSeekerRepository.cs" />
+    <Compile Include="Repository\PublicRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -180,6 +162,24 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\select2.css" />
+    <Content Include="Content\css\select2.min.css" />
+    <Content Include="Content\MyCss\Site.css" />
+    <Content Include="Content\Static\360_FF.jpg" />
+    <Content Include="Content\Static\a1w0voch.png" />
+    <Content Include="Content\Static\ab-interview-ot.png" />
+    <Content Include="Content\Static\claysys-logo.png" />
+    <Content Include="Content\Static\eventsSwiperLeft-ot.png" />
+    <Content Include="Content\Static\homePageJP.png" />
+    <Content Include="Content\Static\Job_Posting_Page.51e6ab7c156a002d438b.png" />
+    <Content Include="Content\Static\mp6swi3s.png" />
+    <Content Include="Content\Static\role-collection-ot.png" />
+    <Content Include="Content\Static\subscriptionWidget.d8278767.png" />
+    <Content Include="Content\Static\white-boy.a0d2814a.png" />
+    <Content Include="ExceptionDetailsFile\16-10-23.txt" />
+    <Content Include="ExceptionDetailsFile\20-10-23.txt" />
+    <Content Include="ExceptionDetailsFile\22-01-24.txt" />
+    <Content Include="ExceptionDetailsFile\25-10-23.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -188,31 +188,16 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas\HelpPage\Views\Web.config" />
-    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Content\Static\default.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\MyScripts\main.js" />
+    <Content Include="Scripts\MyScripts\script.js" />
+    <Content Include="Scripts\MyScripts\select2.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -220,17 +205,68 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Shared\EmployerLayout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\JobSeekerLayout.cshtml" />
+    <Content Include="Views\Shared\MainLayout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\EmployerRegister.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Jobs.cshtml" />
+    <Content Include="Views\Home\JobSeekerRegister.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Admin\AddAdmin.cshtml" />
+    <Content Include="Views\Admin\AddCategory.cshtml" />
+    <Content Include="Views\Admin\AddSkills.cshtml" />
+    <Content Include="Views\Admin\Categories.cshtml" />
+    <Content Include="Views\Admin\ChangePassword.cshtml" />
+    <Content Include="Views\Admin\ContactMessages.cshtml" />
+    <Content Include="Views\Admin\EditSkill.cshtml" />
+    <Content Include="Views\Admin\Employers.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\JobDetails.cshtml" />
+    <Content Include="Views\Admin\Jobs.cshtml" />
+    <Content Include="Views\Admin\JobSeekerProfile.cshtml" />
+    <Content Include="Views\Admin\JobSeekers.cshtml" />
+    <Content Include="Views\Admin\JobViews.cshtml" />
+    <Content Include="Views\Admin\Skills.cshtml" />
+    <Content Include="Views\Admin\UpdateCategory.cshtml" />
+    <Content Include="Views\Admin\VerifyEmployer.cshtml" />
+    <Content Include="Views\Employer\AddJobVacancy.cshtml" />
+    <Content Include="Views\Employer\Applications.cshtml" />
+    <Content Include="Views\Employer\ChangePassword.cshtml" />
+    <Content Include="Views\Employer\ChatList.cshtml" />
+    <Content Include="Views\Employer\Index.cshtml" />
+    <Content Include="Views\Employer\JobDetails.cshtml" />
+    <Content Include="Views\Employer\JobSeekerProfile.cshtml" />
+    <Content Include="Views\Employer\Send-Message.cshtml" />
+    <Content Include="Views\Employer\SendMessage.cshtml" />
+    <Content Include="Views\Employer\UpdateProfile.cshtml" />
+    <Content Include="Views\Employer\UpdateVacancy.cshtml" />
+    <Content Include="Views\Employer\Vacancies.cshtml" />
+    <Content Include="Views\Employer\ViewProfile.cshtml" />
+    <Content Include="Views\JobSeeker\AddEducationDetails.cshtml" />
+    <Content Include="Views\JobSeeker\AddSkill.cshtml" />
+    <Content Include="Views\JobSeeker\AppliedJobs.cshtml" />
+    <Content Include="Views\JobSeeker\Bookmarks.cshtml" />
+    <Content Include="Views\JobSeeker\ChangePassword.cshtml" />
+    <Content Include="Views\JobSeeker\ChatList.cshtml" />
+    <Content Include="Views\JobSeeker\Index.cshtml" />
+    <Content Include="Views\JobSeeker\JobDetails.cshtml" />
+    <Content Include="Views\JobSeeker\Jobs.cshtml" />
+    <Content Include="Views\JobSeeker\JobSeekerProfile.cshtml" />
+    <Content Include="Views\JobSeeker\Send-Message.cshtml" />
+    <Content Include="Views\JobSeeker\SendMessage.cshtml" />
+    <Content Include="Views\JobSeeker\UpdateEducationDetails.cshtml" />
+    <Content Include="Views\JobSeeker\UpdateProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\bootstrap.min.js.map" />

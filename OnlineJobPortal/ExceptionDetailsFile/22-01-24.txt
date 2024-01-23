@@ -1,0 +1,312 @@
+-----------Exception Details on  1/22/2024 12:42:40 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 12:42:40 PM
+
+Error Line No : ine 235
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'SP_JobApplicationDelete'.
+
+ Error Page Url: https://localhost:44317/Employer/DeleteApplication/24
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 12:42:52 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 12:42:52 PM
+
+Error Line No : ine 235
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'SP_JobApplicationDelete'.
+
+ Error Page Url: https://localhost:44317/Employer/DeleteApplication/24
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 12:43:17 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 12:43:17 PM
+
+Error Line No : ine 235
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'SP_JobApplicationDelete'.
+
+ Error Page Url: https://localhost:44317/Employer/DeleteApplication/1024
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 12:43:22 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 12:43:22 PM
+
+Error Line No : ine 235
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'SP_JobApplicationDelete'.
+
+ Error Page Url: https://localhost:44317/Employer/DeleteApplication/24
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 12:53:09 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 12:53:09 PM
+
+Error Line No : ine 235
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'SP_JobApplicationDelete'.
+
+ Error Page Url: https://localhost:44317/Employer/DeleteApplication/24
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 1:59:03 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 1:59:03 PM
+
+Error Line No : line 79
+
+Error Message: SaltParseException
+
+Exception Type: BCrypt.Net.SaltParseException
+
+Error Location : Invalid salt version
+
+ Error Page Url: https://localhost:44317/Home/Login
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 2:00:57 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 2:00:57 PM
+
+Error Line No : line 79
+
+Error Message: SaltParseException
+
+Exception Type: BCrypt.Net.SaltParseException
+
+Error Location : Invalid salt version
+
+ Error Page Url: https://localhost:44317/Home/Login
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 2:01:22 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 2:01:22 PM
+
+Error Line No : line 79
+
+Error Message: SaltParseException
+
+Exception Type: BCrypt.Net.SaltParseException
+
+Error Location : Invalid salt version
+
+ Error Page Url: https://localhost:44317/Home/Login
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 2:01:41 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 2:01:41 PM
+
+Error Line No : line 79
+
+Error Message: SaltParseException
+
+Exception Type: BCrypt.Net.SaltParseException
+
+Error Location : Invalid salt version
+
+ Error Page Url: https://localhost:44317/Home/Login
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 2:07:40 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 2:07:40 PM
+
+Error Line No : ine 235
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'SP_JobApplicationDelete'.
+
+ Error Page Url: https://localhost:44317/Employer/DeleteApplication/24
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 2:24:51 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 2:24:51 PM
+
+Error Line No : ine 235
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'SP_JobApplicationDelete'.
+
+ Error Page Url: https://localhost:44317/Employer/DeleteApplication/1024
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 3:13:00 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 3:13:00 PM
+
+Error Line No : ine 235
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'SP_JobApplicationDelete'.
+
+ Error Page Url: https://localhost:44317/Employer/DeleteApplication/24
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/22/2024 3:13:04 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/22/2024 3:13:04 PM
+
+Error Line No : ine 235
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'SP_JobApplicationDelete'.
+
+ Error Page Url: https://localhost:44317/Employer/DeleteApplication/24
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
