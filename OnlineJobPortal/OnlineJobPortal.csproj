@@ -213,8 +213,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\JobSeekerLayout.cshtml" />
     <Content Include="Views\Shared\MainLayout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\EmployerRegister.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Jobs.cshtml" />
@@ -240,12 +238,9 @@
     <Content Include="Views\Employer\AddJobVacancy.cshtml" />
     <Content Include="Views\Employer\Applications.cshtml" />
     <Content Include="Views\Employer\ChangePassword.cshtml" />
-    <Content Include="Views\Employer\ChatList.cshtml" />
     <Content Include="Views\Employer\Index.cshtml" />
     <Content Include="Views\Employer\JobDetails.cshtml" />
     <Content Include="Views\Employer\JobSeekerProfile.cshtml" />
-    <Content Include="Views\Employer\Send-Message.cshtml" />
-    <Content Include="Views\Employer\SendMessage.cshtml" />
     <Content Include="Views\Employer\UpdateProfile.cshtml" />
     <Content Include="Views\Employer\UpdateVacancy.cshtml" />
     <Content Include="Views\Employer\Vacancies.cshtml" />
@@ -255,13 +250,10 @@
     <Content Include="Views\JobSeeker\AppliedJobs.cshtml" />
     <Content Include="Views\JobSeeker\Bookmarks.cshtml" />
     <Content Include="Views\JobSeeker\ChangePassword.cshtml" />
-    <Content Include="Views\JobSeeker\ChatList.cshtml" />
     <Content Include="Views\JobSeeker\Index.cshtml" />
     <Content Include="Views\JobSeeker\JobDetails.cshtml" />
     <Content Include="Views\JobSeeker\Jobs.cshtml" />
     <Content Include="Views\JobSeeker\JobSeekerProfile.cshtml" />
-    <Content Include="Views\JobSeeker\Send-Message.cshtml" />
-    <Content Include="Views\JobSeeker\SendMessage.cshtml" />
     <Content Include="Views\JobSeeker\UpdateEducationDetails.cshtml" />
     <Content Include="Views\JobSeeker\UpdateProfile.cshtml" />
   </ItemGroup>
