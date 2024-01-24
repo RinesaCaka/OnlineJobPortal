@@ -45,8 +45,8 @@
                         <div class="job-item" data-job-id="@item.JobApplicationID">
                             @Html.ActionLink("View Profile", "JobSeekerProfile", "Employer", new { id = item.SeekerId }, new { @class = "btn btn-primary btn-sm job-link" }) |
                             @Html.ActionLink("Approve", "ApplicationApprove", "Employer", new { id = item.JobApplicationID, aid = item.JobId }, new { @class = "btn btn-success btn-sm" }) |
-                            @Html.ActionLink("Reject", "ApplicationReject", "Employer", new { id = item.JobApplicationID, aid = item.JobId }, new { @class = "btn btn-danger btn-sm" }) |
-                            @Html.ActionLink("Delete", "DeleteApplication", "Application", new { id = item.JobApplicationID }, new { @class = "btn btn-warning btn-sm" })
+                            @Html.ActionLink("Reject", "ApplicationReject", "Employer", new { id = item.JobApplicationID, aid = item.JobId }, new { @class = "btn btn-danger btn-sm" }) 
+                            
                         </div>
                     </td>
                 </tr>

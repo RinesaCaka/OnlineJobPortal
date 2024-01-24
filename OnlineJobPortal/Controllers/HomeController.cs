@@ -89,22 +89,10 @@ namespace OnlineJobPortal.Controllers
                 {
                     EmployerRepository employerRepository = new EmployerRepository();
                     var details = employerRepository.Employers().Find(model => model.Username == obj.Username);
-                    if (details.Status == "Pending" || details.Status == "Rejected")
-                    {
-                        TempData["Message"] = "You are not verified ";
-                        return RedirectToAction("Index", "Home");
-                    }
                     Session["EmployerId"] = details.EmployerID;
                     Session["CompanyLogo"] = Convert.ToBase64String(details.CompanyLogo);
                     Session["EmployerUsername"] = details.Username;
                     return RedirectToAction("Index", "Employer");
-                }
-                else if (result == "Admin")
-                {
-                    Session["Admin"] = obj.Username;
-                    //Roles.AddUserToRole(obj.Username, "Admin");
-                    FormsAuthentication.SetAuthCookie(obj.Username, false);
-                    return RedirectToAction("Index", "Admin");
                 }
                 else
                 {
@@ -126,33 +114,7 @@ namespace OnlineJobPortal.Controllers
         {
             return View();
         }
-        /// <summary>
-        /// Contact Us page
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult ContactUs()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult ContactUs(ContactMessage contactMessage)
-        {
-            try
-            {
-                PublicRepository publicRepository = new PublicRepository();
-                if (publicRepository.CreateContactMessage(contactMessage))
-                {
-                    TempData["Message"] = "Message sent";
-                }
-                return RedirectToAction("Index", "Home");
-            }
-            catch (Exception ex)
-            {
-                ExceptionLogging.SendErrorToText(ex);
-                return View(ex.Message);
-            }
-        }
-
+       
         /// <summary>
         /// Employer registration view
         /// </summary>

@@ -11,9 +11,9 @@ function showSlide() {
 }
 
 var statecity = {
-    "Kerala": ["Kochi", "Aluva", "Kottaym"],
-    "TamilNadu": ["Chennai", "Coimbatore", "Madura"],
-    "Karnadaka": ["Bengaluru", "Mysuru", "Mangaluru"]
+    "Kosovo": ["Pristina", "Ferizaj", "Peje"],
+    "Albania": ["Tirane", "Durres", "Vlore"],
+    "Europe": ["Germany", "Zurich", "France"]
 }
 
 function updateCity() {

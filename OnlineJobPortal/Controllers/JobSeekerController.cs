@@ -476,76 +476,7 @@ namespace OnlineJobPortal.Controllers
                 ExceptionLogging.SendErrorToText(ex);
                 return View("Error");
             }
-        }
-        /// <summary>
-        /// Send message
-        /// </summary>
-        /// <param name="id">Employer id</param>
-        /// <returns></returns>
-        public ActionResult SendMessage(int id)
-        {
-            try
-            {
-                PublicRepository publicRepository = new PublicRepository();
-                int seekerId = (int)Session["SeekerId"];
-                var chats = publicRepository.ReadMessage(seekerId, id);
-                if (chats.Count == 0)
-                {
-                    EmployerRepository repo = new EmployerRepository();
-                    var employer = repo.Employers().Find(model => model.EmployerID == id);
-                    return View("Send-Message", employer);
-                }
-                return View(chats);
-            }
-            catch (Exception ex)
-            {
-                ExceptionLogging.SendErrorToText(ex);
-                return View("Error");
-            }
-        }
-        /// <summary>
-        /// Send message
-        /// </summary>
-        /// <param name="id">Employer id</param>
-        /// <param name="message">Message</param>
-        /// <returns></returns>
-        [HttpPost]
-        public ActionResult SendMessage(int id, string message)
-        {
-            try
-            {
-                PublicRepository publicRepository = new PublicRepository();
-                int seekerId = (int)Session["SeekerId"];
-                char sender = 'J';
-                if (publicRepository.SendMessage(seekerId, id, message, sender))
-                {
-                    return new HttpStatusCodeResult(200);
-                }
-                return new HttpStatusCodeResult(400);
-            }
-            catch (Exception)
-            {
-                return new HttpStatusCodeResult(500);
-            }
-        }
-        /// <summary>
-        /// Chat list of the job seeker
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult ChatList()
-        {
-            try
-            {
-                JobSeekerRepository jobSeekerRepository = new JobSeekerRepository();
-                int seekerId = (int)Session["SeekerId"];
-                return View(jobSeekerRepository.ChatList(seekerId));
-            }
-            catch (Exception ex)
-            {
-                ExceptionLogging.SendErrorToText(ex);
-                return View("Error");
-            }
-        }
+        }       
         /// <summary>
         /// Logout Employer
         /// </summary>

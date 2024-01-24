@@ -249,9 +249,9 @@ function validateCompanyName(input) {
     }
 
     const stateData = [
-        { name: 'Kerala', cities: ['Trivandrum', 'Kochi', 'Kozhikode'] },
-        { name: 'Tamil Nadu', cities: ['Chennai', 'Coimbatore', 'Madurai'] },
-        { name: 'Karnataka', cities: ['Bangalore', 'Mysore', 'Hubli'] },
+        { name: 'Kosovo', cities: ['Pristina', 'Ferizaj', 'Peje'] },
+        { name: 'Albania', cities: ['Tirana', 'Durres', 'Vlore'] },
+        { name: 'Europe', cities: ['Germany', 'Zurich', 'France'] },
     ];
 
     const stateSelect = document.getElementById('state');

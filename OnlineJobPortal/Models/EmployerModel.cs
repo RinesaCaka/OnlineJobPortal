@@ -96,20 +96,7 @@ namespace OnlineJobPortal.Models
         public DateTime ApplicationDeadline { get; set; }
         public bool IsPublished { get; set; }
     }
-    /// <summary>
-    /// Admin model
-    /// </summary>
-    public class Admin
-    {
-        [Key]
-        public int AdminID { get; set; }
-        public string Name { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Password { get; set; }
-
-    }
+    
     /// <summary>
     /// Vacancy view model
     /// </summary>

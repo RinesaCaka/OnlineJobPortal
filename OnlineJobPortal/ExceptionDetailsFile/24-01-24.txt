@@ -1,0 +1,532 @@
+-----------Exception Details on  1/24/2024 3:56:03 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 3:56:03 PM
+
+Error Line No : ine 117
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : The DELETE statement conflicted with the REFERENCE constraint "FK__JobVacanc__Categ__7E37BEF6". The conflict occurred in database "JobPortal", table "dbo.JobVacancies", column 'CategoryID'.
+The statement has been terminated.
+
+ Error Page Url: https://localhost:44331/Employer/DeleteCategory/2
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 3:56:38 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 3:56:38 PM
+
+Error Line No : ine 117
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : The DELETE statement conflicted with the REFERENCE constraint "FK__JobVacanc__Categ__7E37BEF6". The conflict occurred in database "JobPortal", table "dbo.JobVacancies", column 'CategoryID'.
+The statement has been terminated.
+
+ Error Page Url: https://localhost:44331/Employer/DeleteCategory/2
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 3:56:45 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 3:56:45 PM
+
+Error Line No : ine 117
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : The DELETE statement conflicted with the REFERENCE constraint "FK__JobVacanc__Categ__7E37BEF6". The conflict occurred in database "JobPortal", table "dbo.JobVacancies", column 'CategoryID'.
+The statement has been terminated.
+
+ Error Page Url: https://localhost:44331/Employer/DeleteCategory/3
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 3:57:11 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 3:57:11 PM
+
+Error Line No : ine 117
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : The DELETE statement conflicted with the REFERENCE constraint "FK__JobVacanc__Categ__7E37BEF6". The conflict occurred in database "JobPortal", table "dbo.JobVacancies", column 'CategoryID'.
+The statement has been terminated.
+
+ Error Page Url: https://localhost:44331/Employer/DeleteCategory/2
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 3:58:31 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 3:58:31 PM
+
+Error Line No : line 78
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/Login
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 3:59:03 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 3:59:03 PM
+
+Error Line No : line 78
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/Login
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:33 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:33 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=inxo
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:33 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:33 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=inxode
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:34 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:34 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=inxodec
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:34 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:34 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=inxod
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:34 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:34 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=inxod
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:34 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:34 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=inxo
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:35 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:35 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=inxode
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:35 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:35 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=inco
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:35 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:35 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=incod
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:36 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:36 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=incode
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:15:36 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:15:36 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=incodex
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:16:33 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:16:33 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=incodex
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:16:45 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:16:45 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=incodex
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:16:52 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:16:52 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=incodex
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:16:53 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:16:53 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=incodex
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 4:17:02 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 4:17:02 PM
+
+Error Line No : ine 210
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'Admin'.
+
+ Error Page Url: https://localhost:44331/Home/CheckUsername/?username=incodex
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
