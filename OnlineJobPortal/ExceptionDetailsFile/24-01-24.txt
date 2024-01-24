@@ -530,3 +530,53 @@ User Host IP:
 
 
 
+-----------Exception Details on  1/24/2024 8:42:51 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 8:42:51 PM
+
+Error Line No : ine 117
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : The DELETE statement conflicted with the REFERENCE constraint "FK__JobVacanc__Categ__7E37BEF6". The conflict occurred in database "JobPortal", table "dbo.JobVacancies", column 'CategoryID'.
+The statement has been terminated.
+
+ Error Page Url: https://localhost:44331/Employer/DeleteCategory/2
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  1/24/2024 8:42:57 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/24/2024 8:42:57 PM
+
+Error Line No : ine 117
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : The DELETE statement conflicted with the REFERENCE constraint "FK__JobVacanc__Categ__7E37BEF6". The conflict occurred in database "JobPortal", table "dbo.JobVacancies", column 'CategoryID'.
+The statement has been terminated.
+
+ Error Page Url: https://localhost:44331/Employer/DeleteCategory/2
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
