@@ -382,5 +382,70 @@ namespace OnlineJobPortal.Repository
             }
             finally { con.Close(); }
         }
+
+        /// <summary>
+        /// Insert category to database
+        /// </summary>
+        /// <param name="cat">Category instance</param>
+        /// <returns></returns>
+        public bool AddCategory(Category cat)
+        {
+            try
+            {
+                connection();
+                SqlCommand com = new SqlCommand("SP_CreateCategory", con);
+                com.Parameters.AddWithValue("@CategoryName", cat.CategoryName);
+                com.CommandType = CommandType.StoredProcedure;
+
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                return i > 0;
+            }
+            finally { con.Close(); }
+        }
+        /// <summary>
+        /// Update category
+        /// </summary>
+        /// <param name="cat">Category instance</param>
+        /// <returns></returns>
+        public bool UpdateCategory(Category cat)
+        {
+            try
+            {
+                connection();
+                SqlCommand com = new SqlCommand("SP_UpdateCategory", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@CategoryName", cat.CategoryName);
+                com.Parameters.AddWithValue("@CategoryId", cat.CategoryId);
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                return i > 0;
+            }
+            finally { con.Close(); }
+        }
+        /// <summary>
+        /// Delete category
+        /// </summary>
+        /// <param name="cat">category instance</param>
+        /// <returns></returns>
+        public bool DeleteCategory(int id)
+        {
+            try
+            {
+                connection();
+                SqlCommand com = new SqlCommand("SP_DeleteCategory", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@CategoryId", id);
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                return i > 0;
+            }
+            finally { con.Close(); }
+        }
+        /// <summary>
+        /// Employer approve 
+        /// </summary>
+        /// <param name="id"> Employer id</param>
+        /// <returns></returns>
     }
 }

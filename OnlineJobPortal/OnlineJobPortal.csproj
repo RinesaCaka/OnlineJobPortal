@@ -256,6 +256,9 @@
     <Content Include="Views\JobSeeker\JobSeekerProfile.cshtml" />
     <Content Include="Views\JobSeeker\UpdateEducationDetails.cshtml" />
     <Content Include="Views\JobSeeker\UpdateProfile.cshtml" />
+    <Content Include="Views\Employer\AddCategory.cshtml" />
+    <Content Include="Views\Employer\Categories.cshtml" />
+    <Content Include="Views\Employer\UpdateCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

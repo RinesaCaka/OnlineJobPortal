@@ -27,6 +27,156 @@ namespace OnlineJobPortal.Controllers
                 return View("Error");
             }
         }
+
+        /// <summary>
+        /// Filter the job details based on the search string
+        /// </summary>
+        /// <param name="search">Search string</param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Jobs(string search)
+        {
+            try
+            {
+                PublicRepository publicRepository = new PublicRepository();
+                var jobs = publicRepository.GetJobDetails();
+                if (!string.IsNullOrEmpty(search))
+                {
+                    jobs = jobs.Where(job => job.JobTitle.Contains(search) || job.CategoryName.Contains(search) || job.Location.Contains(search) && job.ApplicationDeadline > DateTime.Now && job.IsPublished).ToList();
+                }
+
+                return View(jobs);
+            }
+            catch (Exception ex)
+            {
+                ExceptionLogging.SendErrorToText(ex);
+                return View("Error");
+            }
+        }
+
+        /// <summary>
+        /// Display Categories
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Categories()
+        {
+            PublicRepository publicRepository = new PublicRepository();
+            var category = publicRepository.DisplayCategories();
+            return View(category);
+        }
+
+        public ActionResult UpdateCategory(int id)
+        {
+            try
+            {
+                PublicRepository publicRepository = new PublicRepository();
+                return View(publicRepository.DisplayCategories().Find(cat => cat.CategoryId == id));
+            }
+            catch (Exception ex)
+            {
+                ExceptionLogging.SendErrorToText(ex);
+                return View("Error");
+            }
+
+        }
+
+        /// <summary>
+        /// Edit category
+        /// </summary>
+        /// <param name="obj">Category object</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult UpdateCategory(Category obj)
+        {
+            try
+            {
+                EmployerRepository EmployerRepository = new EmployerRepository();
+                if (EmployerRepository.UpdateCategory(obj))
+                {
+                    TempData["Message"] = "Category Updated";
+                }
+                return RedirectToAction("Categories", "Employer");
+            }
+            catch (Exception ex)
+            {
+                ExceptionLogging.SendErrorToText(ex);
+                return View("Error");
+            }
+        }
+        /// <summary>
+        /// Delete category
+        /// </summary>
+        /// <param name="id">Skill id</param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult DeleteCategory(int id)
+        {
+            try
+            {
+                EmployerRepository EmployerRepository = new EmployerRepository();
+                if (EmployerRepository.DeleteCategory(id))
+                {
+                    TempData["Message"] = "Category deleted";
+                }
+                return RedirectToAction("Categories");
+            }
+            catch (Exception ex)
+            {
+                ExceptionLogging.SendErrorToText(ex);
+                return View("Error");
+            }
+        }
+        /// <summary>
+        /// Add category
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+        /// <summary>
+        /// Add Category
+        /// </summary>
+        /// <param name="cat">Category model instance </param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult AddCategory(Category cat)
+        {
+            try
+            {
+                EmployerRepository EmployerRepository = new EmployerRepository();
+                if (EmployerRepository.AddCategory(cat))
+                {
+                    TempData["Message"] = "Category added ";
+                    return RedirectToAction("AddCategory");
+
+                }
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ExceptionLogging.SendErrorToText(ex);
+                return View("Error");
+            }
+        }
+        /// <summary>
+        /// Edit category
+        /// </summary>
+        /// <param name="id">Category id</param>
+        /// <returns></returns>
+        public ActionResult EditCategory(int id)
+        {
+            try
+            {
+                PublicRepository publicRepository = new PublicRepository();
+                var category = publicRepository.DisplayCategories().Find(cat => cat.CategoryId == id);
+                return View(category);
+            }
+            catch (Exception ex)
+            {
+                return View(ex.Message);
+            }
+        }
         /// <summary>
         /// Add job vacancy
         /// </summary>
