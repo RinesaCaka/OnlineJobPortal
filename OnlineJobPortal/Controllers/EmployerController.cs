@@ -463,7 +463,7 @@ namespace OnlineJobPortal.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            catch (Exception ex)when
+            catch (Exception ex)
             {
                 ExceptionLogging.SendErrorToText(ex);
                 return View("Error");

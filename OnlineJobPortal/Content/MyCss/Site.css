@@ -76,7 +76,12 @@ navbar {
     cursor: pointer;
 }
 
-
+.h1-heading {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    color: #4682B4;
+}
 .cus-navbar a:hover {
     color: #00B295;
 }
