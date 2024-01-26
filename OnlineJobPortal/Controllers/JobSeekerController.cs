@@ -12,6 +12,17 @@ namespace OnlineJobPortal.Controllers
 {
     public class JobSeekerController : Controller
     {
+        public JobSeekerController()
+        {
+        }
+
+        private readonly IJobSeekerRepository jobSeekerRepository;
+
+        // Constructor for dependency injection
+        public JobSeekerController(IJobSeekerRepository repository)
+        {
+            jobSeekerRepository = repository;
+        }
         private bool IsValid()
         {
             return Session["SeekerId"] != null;

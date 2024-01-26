@@ -13,7 +13,7 @@ using System.Web;
 
 namespace OnlineJobPortal.Repository
 {
-    public class JobSeekerRepository
+    public class JobSeekerRepository : IJobSeekerRepository
     {
         private SqlConnection con;
 
