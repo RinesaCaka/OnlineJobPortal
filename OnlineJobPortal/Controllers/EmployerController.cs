@@ -13,6 +13,18 @@ namespace OnlineJobPortal.Controllers
 {
     public class EmployerController : Controller
     {
+        public EmployerController()
+        {
+        }
+        
+        private readonly IEmployerRepository employerRepository;
+        private readonly IPublicRepository publicRepository;
+
+        public EmployerController(IEmployerRepository employerRepository, IPublicRepository publicRepository)
+        {
+            this.employerRepository = employerRepository;
+            this.publicRepository = publicRepository;
+        }
         public ActionResult Index()
         {
             try
@@ -223,7 +235,7 @@ namespace OnlineJobPortal.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateProfile(EmployerModel employer, HttpPostedFileBase uploadedLogo)
+        public ActionResult UpdateProfile(Employer employer, HttpPostedFileBase uploadedLogo)
         {
             try
             {
@@ -469,7 +481,7 @@ namespace OnlineJobPortal.Controllers
                 return View("Error");
             }
         }
-       
+
         /// <summary>
         /// Logout employer
         /// </summary>

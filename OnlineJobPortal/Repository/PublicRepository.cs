@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace OnlineJobPortal.Repository
 {
-    public class PublicRepository
+    public class PublicRepository:IPublicRepository
     {
         /// <summary>
         /// Connection veriable

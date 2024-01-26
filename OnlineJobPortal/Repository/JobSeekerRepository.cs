@@ -33,7 +33,7 @@ namespace OnlineJobPortal.Repository
         /// <param name="imageUpload">Profile picture</param>
         /// <param name="resumeUpload">Resume</param>
         /// <returns></returns>
-        public bool JobSeekerRegister(JobSeekerModel seeker, HttpPostedFileBase imageUpload, HttpPostedFileBase resumeUpload)
+        public bool JobSeekerRegister(JobSeeker seeker, HttpPostedFileBase imageUpload, HttpPostedFileBase resumeUpload)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace OnlineJobPortal.Repository
         /// <param name="seeker"></param>
         /// <param name="imageUpload"></param>
         /// <returns></returns>
-        public bool JobSeekerUpdate(JobSeekerModel seeker, HttpPostedFileBase imageUpload, int seekerId)
+        public bool JobSeekerUpdate(JobSeeker seeker, HttpPostedFileBase imageUpload, int seekerId)
         {
             try
             {
@@ -141,13 +141,13 @@ namespace OnlineJobPortal.Repository
         /// </summary>
         /// <param name="id">Jobseeker id</param>
         /// <returns></returns>
-        public List<JobSeekerModel> JobSeekers()
+        public List<JobSeeker> JobSeekers()
         {
             try
             {
                 connection();
                 SqlCommand com = new SqlCommand("SP_ReadJobSeeker", con);
-                List<JobSeekerModel> jobSeeker = new List<JobSeekerModel>();
+                List<JobSeeker> jobSeeker = new List<JobSeeker>();
                 com.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(com);
                 DataTable dt = new DataTable();
@@ -156,7 +156,7 @@ namespace OnlineJobPortal.Repository
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    jobSeeker.Add(new JobSeekerModel()
+                    jobSeeker.Add(new JobSeeker()
                     {
                         SeekerId = Convert.ToInt32(dr["SeekerID"]),
                         FirstName = Convert.ToString(dr["FirstName"]),

@@ -1,0 +1,24 @@
+-----------Exception Details on  1/26/2024 2:08:21 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/26/2024 2:08:21 PM
+
+Error Line No : ry cat)
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: https://localhost:44331/Employer/AddCategory
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

@@ -9,7 +9,18 @@ using System.Web.Security;
 namespace OnlineJobPortal.Controllers
 {
     public class HomeController : Controller
+
     {
+        public HomeController()
+        {
+        }
+        private readonly IPublicRepository publicRepository;
+        private readonly IEmployerRepository employerRepository;
+        public HomeController(IPublicRepository publicRepository,IEmployerRepository employerRepository)
+        {
+            this.publicRepository = publicRepository;
+            this.employerRepository = employerRepository;
+        }
         /// <summary>
         /// Index page controler
         /// </summary>
@@ -38,7 +49,7 @@ namespace OnlineJobPortal.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult JobSeekerRegister(JobSeekerModel jobSeeker, HttpPostedFileBase imageUpload, HttpPostedFileBase resumeUpload)
+        public ActionResult JobSeekerRegister(JobSeeker jobSeeker, HttpPostedFileBase imageUpload, HttpPostedFileBase resumeUpload)
         {
             try
             {
@@ -114,7 +125,7 @@ namespace OnlineJobPortal.Controllers
         {
             return View();
         }
-       
+
         /// <summary>
         /// Employer registration view
         /// </summary>
@@ -132,7 +143,7 @@ namespace OnlineJobPortal.Controllers
         /// <param name="logoUpload">Company logo</param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult EmployerRegister(EmployerModel emp, HttpPostedFileBase logoUpload)
+        public ActionResult EmployerRegister(Employer emp, HttpPostedFileBase logoUpload)
         {
             try
             {
@@ -214,5 +225,6 @@ namespace OnlineJobPortal.Controllers
                 return View("Error");
             }
         }
-    }
+    
+}
 }

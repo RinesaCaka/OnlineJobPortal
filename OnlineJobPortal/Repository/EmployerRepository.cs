@@ -12,28 +12,31 @@ using System.Web;
 
 namespace OnlineJobPortal.Repository
 {
-    public class EmployerRepository
+    public class EmployerRepository:IEmployerRepository
     {
         private SqlConnection con;
+
 
         /// <summary>
         /// To establish connection between server and the application
         /// </summary>
+        /// 
         private void connection()
         {
             string conn = ConfigurationManager.ConnectionStrings["mycon"].ToString();
             con = new SqlConnection(conn);
 
         }
+
         /// <summary>
         /// Employer registration
         /// </summary>
         /// <param name="emp">Employe instance</param>
         /// <param name="logoUpload">Company logo </param>
         /// <returns></returns>
-        public bool EmployerRegister(EmployerModel emp, HttpPostedFileBase logoUpload)
+        public bool EmployerRegister(Employer emp, HttpPostedFileBase logoUpload)
         {
-            try
+            try  
             {
                 connection();
                 using (BinaryReader binaryReader = new BinaryReader(logoUpload.InputStream))
@@ -65,7 +68,7 @@ namespace OnlineJobPortal.Repository
         /// <param name="employer"></param>
         /// <param name="uploadLogo"></param>
         /// <returns></returns>
-        public bool UpdateEmployer(EmployerModel emp, HttpPostedFileBase uploadedLogo, int employerId)
+        public bool UpdateEmployer(Employer emp, HttpPostedFileBase uploadedLogo, int employerId)
         {
             try
             {
@@ -104,13 +107,13 @@ namespace OnlineJobPortal.Repository
         /// Details of all employer 
         /// </summary>
         /// <returns></returns>
-        public List<EmployerModel> Employers()
+        public List<Employer> Employers()
         {
             try
             {
                 connection();
                 SqlCommand com = new SqlCommand("SP_ReadEmployer", con);
-                List<EmployerModel> employers = new List<EmployerModel>();
+                List<Employer> employers = new List<Employer>();
                 com.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(com);
                 DataTable dt = new DataTable();
@@ -119,7 +122,7 @@ namespace OnlineJobPortal.Repository
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    employers.Add(new EmployerModel()
+                    employers.Add(new Employer()
                     {
                         EmployerID = Convert.ToInt32(dr["EmployerID"]),
                         CompanyName = Convert.ToString(dr["CompanyName"]),

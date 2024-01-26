@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f4dcb31f3857493f98bdc38c45bf9a9c" Name="Diagram1">
+        <EntityTypeShape EntityType="JobPortalModel.Bookmark" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.Category" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.EducationDetail" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.Employer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.JobApplication" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.JobSeeker" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.JobSeekerSkill" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.JobVacancy" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.JobView" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.Location" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobPortalModel.Skill" Width="1.5" PointX="6" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="JobPortalModel.FK__Bookmarks__JobID" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK_Bookmarks_JobSeekers" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK__JobVacanc__Categ__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK__Education__Seeke__3E1D39E1" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK__JobVacanc__Emplo__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK__JobApplic__JobID__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK__JobApplic__Seeke__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK__JobViews__Seeker__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK_JobSeekerSkills_JobSeeker" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK_JobSeekerSkills_Skill" ManuallyRouted="false" />
+        <AssociationConnector Association="JobPortalModel.FK__JobViews__JobID__02084FDA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

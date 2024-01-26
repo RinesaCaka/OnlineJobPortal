@@ -80,7 +80,7 @@ namespace OnlineJobPortal.Controllers
         /// <param name="imageUpload">Uploaded image</param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult UpdateProfile(JobSeekerModel jobSeeker, HttpPostedFileBase imageUpload)
+        public ActionResult UpdateProfile(JobSeeker jobSeeker, HttpPostedFileBase imageUpload)
         {
             try
             {
