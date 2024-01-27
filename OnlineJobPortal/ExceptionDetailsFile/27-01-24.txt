@@ -22,3 +22,27 @@ User Host IP:
 
 
 
+-----------Exception Details on  1/27/2024 6:58:36 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/27/2024 6:58:36 PM
+
+Error Line No : ine 150
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Procedure or function 'SP_CreateCategory' expects parameter '@CategoryName', which was not supplied.
+
+ Error Page Url: https://localhost:44331/Employer/AddCategory
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

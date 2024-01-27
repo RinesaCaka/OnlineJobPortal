@@ -206,6 +206,12 @@
     <Compile Include="Repository\IPublicRepository.cs" />
     <Compile Include="Repository\JobSeekerRepository.cs" />
     <Compile Include="Repository\PublicRepository.cs" />
+    <Compile Include="Service\EmployerService.cs" />
+    <Compile Include="Service\IEmployerService.cs" />
+    <Compile Include="Service\IJobSeekerService.cs" />
+    <Compile Include="Service\IPublicService.cs" />
+    <Compile Include="Service\JobSeekerService.cs" />
+    <Compile Include="Service\PublicService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />

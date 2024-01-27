@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using System.Web;
+using OnlineJobPortal.Services;
 
 namespace OnlineJobPortal.Controllers
 {
@@ -16,14 +17,15 @@ namespace OnlineJobPortal.Controllers
         {
         }
 
-        private readonly IJobSeekerRepository jobSeekerRepository;
-        private readonly IPublicRepository publicRepository;
+        private readonly IJobSeekerService jobSeekerService;
+        private readonly IPublicService publicService;
 
         // Constructor for dependency injection
-        public JobSeekerController(IJobSeekerRepository repository, IPublicRepository publicRepository)
+        public JobSeekerController( IJobSeekerService jobSeekerService, IPublicService publicService)
         {
-            jobSeekerRepository = repository;
-            this.publicRepository = publicRepository;
+          
+            this.jobSeekerService = jobSeekerService;
+            this.publicService = publicService;
         }
         private bool IsValid()
         {
@@ -58,8 +60,8 @@ namespace OnlineJobPortal.Controllers
                 
                 PublicRepository repo = new PublicRepository();
                 int seekerId = (int)Session["SeekerId"];
-                var jobSeeker = jobSeekerRepository.JobSeekers().Find(model => model.SeekerId == seekerId);
-                var edu = jobSeekerRepository.GetEducationDetails(seekerId);
+                var jobSeeker = jobSeekerService.JobSeekers().Find(model => model.SeekerId == seekerId);
+                var edu = jobSeekerService.GetEducationDetails(seekerId);
                 var userSkills = repo.JobSeekerSkills(seekerId).ToList();
                 var userSkillsId = repo.JobSeekerSkills(seekerId).Select(js => js.SkillId).ToList();
 
@@ -82,7 +84,7 @@ namespace OnlineJobPortal.Controllers
         public ActionResult UpdateProfile()
         {
             ;
-            var jobSeeker = jobSeekerRepository.JobSeekers().Find(model => model.SeekerId == (int)Session["SeekerId"]);
+            var jobSeeker = jobSeekerService.JobSeekers().Find(model => model.SeekerId == (int)Session["SeekerId"]);
             return View(jobSeeker);
 
         }
@@ -98,7 +100,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
                 
-                if (jobSeekerRepository.JobSeekerUpdate(jobSeeker, imageUpload, Convert.ToInt32(Session["SeekerId"])))
+                if (jobSeekerService.JobSeekerUpdate(jobSeeker, imageUpload, Convert.ToInt32(Session["SeekerId"])))
                 {
                     TempData["Message"] = "Updated";
                 }
@@ -128,7 +130,7 @@ namespace OnlineJobPortal.Controllers
             {
                 int id = (int)Session["SeekerId"];
                 
-                if (jobSeekerRepository.AddEducationDetails(educationList, id))
+                if (jobSeekerService.AddEducationDetails(educationList, id))
                 {
                     TempData["Message"] = "Added successfully";
                     return RedirectToAction("JobSeekerProfile");
@@ -148,7 +150,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
                
-                if (jobSeekerRepository.UpdateResume(resumeFile, Convert.ToInt32(Session["SeekerId"])))
+                if (jobSeekerService.UpdateResume(resumeFile, Convert.ToInt32(Session["SeekerId"])))
                 {
                     TempData["Message"] = "Resume Updated";
                 }
@@ -164,7 +166,7 @@ namespace OnlineJobPortal.Controllers
         public ActionResult UpdateEducationDetails(int id)
         {
            
-            var educationDetails = jobSeekerRepository.GetEducationDetails(Convert.ToInt32(Session["SeekerId"])).Find(ed => ed.EducationId == id);
+            var educationDetails = jobSeekerService.GetEducationDetails(Convert.ToInt32(Session["SeekerId"])).Find(ed => ed.EducationId == id);
             return View(educationDetails);
         }
         /// <summary>
@@ -178,7 +180,7 @@ namespace OnlineJobPortal.Controllers
             
             try
             {
-                if (jobSeekerRepository.UpdateEducationDetails(educationDetails))
+                if (jobSeekerService.UpdateEducationDetails(educationDetails))
                 {
                     TempData["Message"] = "Updated Successfully";
                 }
@@ -201,7 +203,7 @@ namespace OnlineJobPortal.Controllers
             
             try
             {
-                if (jobSeekerRepository.DeleteEducationDetails(id))
+                if (jobSeekerService.DeleteEducationDetails(id))
                 {
                     TempData["Message"] = "Deleted Successfully ";
                 }
@@ -213,29 +215,8 @@ namespace OnlineJobPortal.Controllers
                 return View("Error");
             }
         }
-        /// <summary>
-        /// Delete Jobseeker skill id
-        /// </summary>
-        /// <param name="id">Skill id</param>
-        /// <returns></returns>
-        [HttpGet]
-        public ActionResult DeleteJobSeekerSkill(int id)
-        {
-            try
-            {
-                
-                if (jobSeekerRepository.DeleteJobSeekerSkill((int)id))
-                {
-                    TempData["Message"] = "Deleted Successullly";
-                }
-                return RedirectToAction("JobSeekerProfile");
-            }
-            catch (Exception ex)
-            {
-                ExceptionLogging.SendErrorToText(ex);
-                return View("Error");
-            }
-        }
+     
+        
         /// <summary>
         /// Display job vacancies posted by the employer
         /// </summary>
@@ -246,7 +227,7 @@ namespace OnlineJobPortal.Controllers
             {
                 
                 DateTime currentDate = DateTime.Now;
-                var jobs = publicRepository.GetJobDetails().Where(job => job.ApplicationDeadline >= currentDate && job.IsPublished).ToList();
+                var jobs = publicService.GetJobDetails().Where(job => job.ApplicationDeadline >= currentDate && job.IsPublished).ToList();
                 return View(jobs);
             }
             catch (Exception ex)
@@ -267,7 +248,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
                
-                var jobs = publicRepository.GetJobDetails();
+                var jobs = publicService.GetJobDetails();
                 if (!string.IsNullOrEmpty(search))
                 {
                     jobs = jobs.Where(job => job.JobTitle.Contains(search) || job.CategoryName.Contains(search) || job.Location.Contains(search) && job.ApplicationDeadline > DateTime.Now && job.IsPublished).ToList();
@@ -328,7 +309,7 @@ namespace OnlineJobPortal.Controllers
                     SeekerId = Convert.ToInt32(Session["SeekerId"]),
                     ViewDate = DateTime.Now,
                 };
-                if (jobSeekerRepository.VisitJob(obj))
+                if (jobSeekerService.VisitJob(obj))
                 {
                     return new HttpStatusCodeResult(200);
                 }
@@ -355,7 +336,7 @@ namespace OnlineJobPortal.Controllers
                     JobId = id,
                     SeekerId = Convert.ToInt32(Session["SeekerId"]),
                 };
-                if (jobSeekerRepository.Bookmark(obj))
+                if (jobSeekerService.Bookmark(obj))
                 {
                     return new HttpStatusCodeResult(200);
                 }
@@ -379,11 +360,11 @@ namespace OnlineJobPortal.Controllers
                 int seekerId = Convert.ToInt32(Session["SeekerId"]);
                
                 
-                var jobDetails = publicRepository.GetJobDetails().Find(model => model.JobID == id);
+                var jobDetails = publicService.GetJobDetails().Find(model => model.JobID == id);
                 if (jobDetails != null)
                 {
-                    var bookmarks = jobSeekerRepository.GetBookmarks(seekerId);
-                    var appliedJobs = jobSeekerRepository.GetJobApplications(seekerId);
+                    var bookmarks = jobSeekerService.GetBookmarks(seekerId);
+                    var appliedJobs = jobSeekerService.GetJobApplications(seekerId);
                     bool isSaved = bookmarks.Any(jobId => jobId.JobId == id);
                     bool isApplied = appliedJobs.Any(jobId => jobId.JobId == id);
                     ViewBag.isSaved = isSaved;
@@ -407,7 +388,7 @@ namespace OnlineJobPortal.Controllers
         {
             
             int id = Convert.ToInt32(Session["SeekerId"]);
-            return View(jobSeekerRepository.GetJobApplications(id));
+            return View(jobSeekerService.GetJobApplications(id));
         }
         public ActionResult ChangePassword()
         {
@@ -425,7 +406,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
                 
-                if (jobSeekerRepository.ChangePassword(oldPassword, newPassword, Convert.ToInt32(Session["SeekerId"])))
+                if (jobSeekerService.ChangePassword(oldPassword, newPassword, Convert.ToInt32(Session["SeekerId"])))
                 {
                     TempData["Message"] = "Password changed";
                 }
@@ -442,15 +423,7 @@ namespace OnlineJobPortal.Controllers
                 return View("Error");
             }
         }
-        public ActionResult AddSkill()
-        {
-           
-            int seekerId = Convert.ToInt32(Session["SeekerId"]);
-            var userSkills = publicRepository.JobSeekerSkills(seekerId).Select(js => js.SkillId).ToList();
-            var skills = publicRepository.DisplaySkills().Where(skill => !userSkills.Contains(skill.SkillId)).ToList();
-            return View(skills);
-        }
-
+      
         [HttpPost]
         public ActionResult AddSkill(int[] SkillId)
         {
@@ -459,7 +432,7 @@ namespace OnlineJobPortal.Controllers
             {
                 foreach (int skillId in SkillId)
                 {
-                    if (jobSeekerRepository.AddSkill(skillId, Convert.ToInt32(Session["SeekerId"])))
+                    if (jobSeekerService.AddSkill(skillId, Convert.ToInt32(Session["SeekerId"])))
                     {
                         TempData["Message"] = "Skills added";
                     }
@@ -481,7 +454,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
                 
-                var bookmarks = jobSeekerRepository.GetBookmarks(Convert.ToInt32(Session["SeekerId"]));
+                var bookmarks = jobSeekerService.GetBookmarks(Convert.ToInt32(Session["SeekerId"]));
                 return View(bookmarks);
             }
             catch (Exception ex)

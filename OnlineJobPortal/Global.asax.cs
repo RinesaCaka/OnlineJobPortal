@@ -9,6 +9,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Unity.Mvc5;
 using Unity;
+using OnlineJobPortal.Services;
 
 namespace OnlineJobPortal
 {
@@ -26,7 +27,11 @@ namespace OnlineJobPortal
             container.RegisterType<IEmployerRepository, EmployerRepository>();
             container.RegisterType<IPublicRepository, PublicRepository>();
             container.RegisterType<IJobSeekerRepository, JobSeekerRepository>();
-            
+
+            container.RegisterType<IEmployerService, EmployerService>();
+            container.RegisterType<IPublicService, PublicService>();
+            container.RegisterType<IJobSeekerService, JobSeekerService>();
+
 
             // Register the Unity container as the MVC dependency resolver
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));

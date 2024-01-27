@@ -1,5 +1,6 @@
 ﻿using OnlineJobPortal.Models;
 using OnlineJobPortal.Repository;
+using OnlineJobPortal.Services;
 using System;
 using System.Linq;
 using System.Web;
@@ -14,12 +15,16 @@ namespace OnlineJobPortal.Controllers
         public HomeController()
         {
         }
-        private readonly IPublicRepository publicRepository;
-        private readonly IEmployerRepository employerRepository;
-        public HomeController(IPublicRepository publicRepository,IEmployerRepository employerRepository)
+        
+        private readonly IPublicService publicService;
+        private readonly IEmployerService employerService;
+        private readonly IJobSeekerService jobSeekerService;
+        public HomeController(IPublicService publicService, IEmployerService employerService, IJobSeekerService jobSeekerService)
         {
-            this.publicRepository = publicRepository;
-            this.employerRepository = employerRepository;
+           
+            this.publicService = publicService;
+            this.employerService = employerService;
+            this.jobSeekerService = jobSeekerService;
         }
         /// <summary>
         /// Index page controler
@@ -55,8 +60,8 @@ namespace OnlineJobPortal.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    JobSeekerRepository jobSeekerRepository = new JobSeekerRepository();
-                    if (jobSeekerRepository.JobSeekerRegister(jobSeeker, imageUpload, resumeUpload))
+                    
+                    if (jobSeekerService.JobSeekerRegister(jobSeeker, imageUpload, resumeUpload))
                     {
                         TempData["Message"] = "Registration successful ";
                         return RedirectToAction("Login");
@@ -86,7 +91,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
                
-                string result = publicRepository.Login(obj);
+                string result = publicService.Login(obj);
                 if (result == "JobSeeker")
                 {
                     JobSeekerRepository jobSeekerRepository = new JobSeekerRepository();
@@ -99,7 +104,7 @@ namespace OnlineJobPortal.Controllers
                 else if (result == "Employer")
                 {
                    
-                    var details = employerRepository.Employers().Find(model => model.Username == obj.Username);
+                    var details = employerService.Employers().Find(model => model.Username == obj.Username);
                     Session["EmployerId"] = details.EmployerID;
                     Session["CompanyLogo"] = Convert.ToBase64String(details.CompanyLogo);
                     Session["EmployerUsername"] = details.Username;
@@ -148,7 +153,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
                
-                if (employerRepository.EmployerRegister(emp, logoUpload))
+                if (employerService.EmployerRegister(emp, logoUpload))
                 {
                     TempData["Message"] = "Registred Successfully";
                     return RedirectToAction("Login");
@@ -168,7 +173,7 @@ namespace OnlineJobPortal.Controllers
             {
                 
                 DateTime currentDate = DateTime.Now;
-                var jobs = publicRepository.GetJobDetails().Where(job => job.ApplicationDeadline >= currentDate && job.IsPublished).ToList();
+                var jobs = publicService.GetJobDetails().Where(job => job.ApplicationDeadline >= currentDate && job.IsPublished).ToList();
                 return View(jobs);
             }
             catch (Exception ex)
@@ -188,7 +193,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
                
-                var jobs = publicRepository.GetJobDetails();
+                var jobs = publicService.GetJobDetails();
                 if (!string.IsNullOrEmpty(search))
                 {
                     jobs = jobs.Where(job => job.JobTitle.Contains(search) || job.CategoryName.Contains(search) || job.Location.Contains(search) && job.ApplicationDeadline > DateTime.Now && job.IsPublished).ToList();
@@ -212,7 +217,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
 
-                if (!publicRepository.CheckUsername(username))
+                if (!publicService.CheckUsername(username))
                 {
                     return new HttpStatusCodeResult(200);
                 }
