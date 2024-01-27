@@ -85,7 +85,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                PublicRepository publicRepository = new PublicRepository();
+               
                 string result = publicRepository.Login(obj);
                 if (result == "JobSeeker")
                 {
@@ -98,7 +98,7 @@ namespace OnlineJobPortal.Controllers
                 }
                 else if (result == "Employer")
                 {
-                    EmployerRepository employerRepository = new EmployerRepository();
+                   
                     var details = employerRepository.Employers().Find(model => model.Username == obj.Username);
                     Session["EmployerId"] = details.EmployerID;
                     Session["CompanyLogo"] = Convert.ToBase64String(details.CompanyLogo);
@@ -147,7 +147,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository employerRepository = new EmployerRepository();
+               
                 if (employerRepository.EmployerRegister(emp, logoUpload))
                 {
                     TempData["Message"] = "Registred Successfully";
@@ -166,7 +166,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                PublicRepository publicRepository = new PublicRepository();
+                
                 DateTime currentDate = DateTime.Now;
                 var jobs = publicRepository.GetJobDetails().Where(job => job.ApplicationDeadline >= currentDate && job.IsPublished).ToList();
                 return View(jobs);
@@ -187,7 +187,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                PublicRepository publicRepository = new PublicRepository();
+               
                 var jobs = publicRepository.GetJobDetails();
                 if (!string.IsNullOrEmpty(search))
                 {
@@ -211,7 +211,6 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                PublicRepository publicRepository = new PublicRepository();
 
                 if (!publicRepository.CheckUsername(username))
                 {

@@ -15,8 +15,7 @@ namespace OnlineJobPortal.Controllers
     {
         public EmployerController()
         {
-        }
-        
+        } 
         private readonly IEmployerRepository employerRepository;
         private readonly IPublicRepository publicRepository;
 
@@ -50,7 +49,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                PublicRepository publicRepository = new PublicRepository();
+                
                 var jobs = publicRepository.GetJobDetails();
                 if (!string.IsNullOrEmpty(search))
                 {
@@ -72,7 +71,7 @@ namespace OnlineJobPortal.Controllers
         /// <returns></returns>
         public ActionResult Categories()
         {
-            PublicRepository publicRepository = new PublicRepository();
+            
             var category = publicRepository.DisplayCategories();
             return View(category);
         }
@@ -81,7 +80,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                PublicRepository publicRepository = new PublicRepository();
+              
                 return View(publicRepository.DisplayCategories().Find(cat => cat.CategoryId == id));
             }
             catch (Exception ex)
@@ -102,8 +101,8 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository EmployerRepository = new EmployerRepository();
-                if (EmployerRepository.UpdateCategory(obj))
+              
+                if (employerRepository.UpdateCategory(obj))
                 {
                     TempData["Message"] = "Category Updated";
                 }
@@ -125,8 +124,8 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository EmployerRepository = new EmployerRepository();
-                if (EmployerRepository.DeleteCategory(id))
+                
+                if (employerRepository.DeleteCategory(id))
                 {
                     TempData["Message"] = "Category deleted";
                 }
@@ -156,8 +155,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository EmployerRepository = new EmployerRepository();
-                if (EmployerRepository.AddCategory(cat))
+                if (employerRepository.AddCategory(cat))
                 {
                     TempData["Message"] = "Category added ";
                     return RedirectToAction("AddCategory");
@@ -180,7 +178,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                PublicRepository publicRepository = new PublicRepository();
+                
                 var category = publicRepository.DisplayCategories().Find(cat => cat.CategoryId == id);
                 return View(category);
             }
@@ -205,7 +203,7 @@ namespace OnlineJobPortal.Controllers
             try
             {
                 int employerId = Convert.ToInt32(Session["EmployerId"]);
-                EmployerRepository employerRepository = new EmployerRepository();
+               
                 if (employerRepository.AddJobVacancy(obj, employerId))
                 {
                     TempData["Message"] = "Job vaccency published....";
@@ -225,12 +223,12 @@ namespace OnlineJobPortal.Controllers
         /// <returns></returns>
         public ActionResult ViewProfile()
         {
-            EmployerRepository employerRepository = new EmployerRepository();
+            
             return View(employerRepository.Employers().Find(model => model.EmployerID == Convert.ToInt32(Session["EmployerId"])));
         }
         public ActionResult UpdateProfile()
         {
-            EmployerRepository employerRepository = new EmployerRepository();
+            
             return View(employerRepository.Employers().Find(model => model.EmployerID == Convert.ToInt32(Session["EmployerId"])));
         }
 
@@ -239,7 +237,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository employerRepository = new EmployerRepository();
+                
                 if (employerRepository.UpdateEmployer(employer, uploadedLogo, Convert.ToInt32(Session["EmployerId"])))
                 {
                     TempData["Message"] = "Updated";
@@ -260,7 +258,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                PublicRepository publicRepository = new PublicRepository();
+              
                 var vacency = publicRepository.GetJobDetails().Where(emp => emp.EmployerID == Convert.ToInt32(Session["EmployerId"]));
                 return View(vacency);
             }
@@ -277,7 +275,7 @@ namespace OnlineJobPortal.Controllers
         /// <returns></returns>
         public ActionResult JobDetails(int id)
         {
-            PublicRepository publicRepository = new PublicRepository();
+            
             var jobDetails = publicRepository.GetJobDetails().Find(model => model.JobID == id);
             return View(jobDetails);
 
@@ -289,7 +287,7 @@ namespace OnlineJobPortal.Controllers
         /// <returns></returns>
         public ActionResult UpdateVacancy(int id)
         {
-            PublicRepository publicRepository = new PublicRepository();
+            
             var jobDetails = publicRepository.GetJobDetails().Find(job => job.JobID == id);
             var categories = publicRepository.DisplayCategories();
 
@@ -306,7 +304,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository employerRepository = new EmployerRepository();
+                
                 if (employerRepository.UpdateJobVacancy(jobVacancy))
                 {
                     TempData["Message"] = "Updated";
@@ -329,7 +327,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository employerRepository = new EmployerRepository();
+                
                 return View(employerRepository.GetJobApplications(id));
             }
             catch (Exception ex)
@@ -348,7 +346,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository employerRepository = new EmployerRepository();
+               
                 if (employerRepository.JobApplicationApprove(id))
                 {
                     TempData["Message"] = "Application Approved";
@@ -370,7 +368,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository employerRepository = new EmployerRepository();
+                
                 if (employerRepository.JobApplicationReject(id))
                 {
                     TempData["Message"] = "Application Rejected";
@@ -392,7 +390,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository employerRepository = new EmployerRepository();
+                
                 if (employerRepository.DeleteJobApplication(id))
                 {
                     TempData["Message"] = "Application Deleted";
@@ -417,7 +415,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository employerRepository = new EmployerRepository();
+                
                 if (employerRepository.JobApplicationRead(id))
                 {
                     return new HttpStatusCodeResult(200);
@@ -438,7 +436,7 @@ namespace OnlineJobPortal.Controllers
         public ActionResult JobSeekerProfile(int id)
         {
             JobSeekerRepository jobSeekerRepository = new JobSeekerRepository();
-            PublicRepository publicRepository = new PublicRepository();
+            
             var jobSeeker = jobSeekerRepository.JobSeekers().Find(model => model.SeekerId == id);
             var edu = jobSeekerRepository.GetEducationDetails(id);
             var userSkills = publicRepository.JobSeekerSkills(id);
@@ -463,7 +461,7 @@ namespace OnlineJobPortal.Controllers
         {
             try
             {
-                EmployerRepository employerRepository = new EmployerRepository();
+                
                 if (employerRepository.ChangePassword(oldPassword, newPassword, Convert.ToInt32(Session["EmployerId"])))
                 {
                     TempData["Message"] = "Password changed";
